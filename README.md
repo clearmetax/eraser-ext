@@ -1,41 +1,102 @@
-# eraser-ext
-A Chrome browser extension to unfollow all accounts on Twitter/X with one click.
+# Twitter Unfollow All Extension
 
-## Features
-- Simple popup interface
-- Automatically loads all followed accounts
-- Unfollows with random delays to avoid rate limits
-- Logs progress in the console
+A sleek Chrome extension to unfollow Twitter/X accounts with intelligent batch processing and real-time progress tracking.
 
-## Installation
-1. **Clone or Download**: Get this repository from GitHub.
-2. **Load in Chrome**:
-   - Open Chrome, go to `chrome://extensions/`.
-   - Enable "Developer mode" (top right).
-   - Click "Load unpacked" and select the `twitter-unfollow-all-extension` folder.
-3. **Add Icons**: Place `icon16.png`, `icon48.png`, and `icon128.png` in the folder (create placeholders if needed).
 
-## Usage
-1. **Open Twitter**: Navigate to your Twitter/X profile (`https://x.com/yourusername`).
-2. **Click Extension**: Click the extension icon in your toolbar, then "Start Unfollowing".
-3. **Monitor**: Check the console (`Ctrl + Shift + J`) for progress logs.
+## 🌟 Features
 
-## Notes
-- **Permissions**: Requires `activeTab` and `scripting` to run on the active Twitter tab.
-- **Rate Limits**: Adjust delays in `unfollow.js` if Twitter blocks rapid unfollows.
-- **UI Changes**: Update selectors in `unfollow.js` if Twitter’s interface changes.
+### Smart Processing
+- **Batch Processing**: Unfollows accounts in sets of 25 for optimal performance
+- **Intelligent Loading**: Dynamically loads accounts as needed
+- **Rate Limit Protection**: Built-in delays and automatic pausing
+- **State Persistence**: Maintains progress even when popup is closed
 
-## Files
-- `manifest.json`: Extension configuration
-- `popup.html`: User interface
-- `popup.js`: Popup logic
-- `unfollow.js`: Core unfollow script
+###Real-time Updates
+  - Live progress tracking
+  - Batch status display
+  - Time elapsed counter
+  - Rate limit warnings
 
-## Contributing
-Fork, submit issues, or send pull requests with enhancements!
+### 💡 Smart Features
+- **Flexible Usage**: Works from both profile and following pages
+- **Progress Tracking**:
+  - Persistent progress bar
+  - Account counters
+  - Time tracking
+  - Status updates
+- **Batch Management**:
+  - Processes 25 accounts at a time
+  - Smart scroll detection
+  - Automatic next batch loading
+- **Reliability**:
+  - Automatic retry mechanism
+  - Error recovery system
+  - Rate limit detection
+  - Progress persistence
 
-## License
-MIT License - see [LICENSE](LICENSE).
+## 🚀 Installation
+1. **Download**: Clone or download this repository
+2. **Load Extension**:
+   - Open Chrome
+   - Navigate to `chrome://extensions/`
+   - Enable "Developer mode" (top right)
+   - Click "Load unpacked"
+   - Select the extension folder
+3. **Icons**: Ensure `icon16.png`, `icon48.png`, and `icon128.png` are present
 
-## Disclaimer
-Use at your own risk. Mass unfollowing may violate Twitter’s terms of service.
+## 🎯 Usage
+1. **Navigate**: Go to either:
+   - Your Twitter/X profile (`twitter.com/yourusername` or `x.com/yourusername`)
+   - Your following page (`twitter.com/yourusername/following` or `x.com/yourusername/following`)
+2. **Start**: Click the extension icon and press "Start Unfollowing"
+3. **Monitor**: Track progress in real-time:
+   - Current batch status
+   - Total accounts found
+   - Accounts unfollowed
+   - Time elapsed
+   - Rate limit warnings
+4. **Control**: 
+   - Stop anytime with the stop button
+   - Progress saves automatically
+   - Resume from where you left off
+
+## ⚙️ Technical Details
+- **Batch Processing**:
+  - 25 accounts per batch
+  - Dynamic loading between batches
+  - Smart scroll management
+- **State Management**:
+  - Chrome storage API for persistence
+  - Real-time sync with content script
+  - Automatic progress recovery
+- **Rate Limiting Protection**:
+  - Random delays (3-5 seconds between actions)
+  - Automatic 5-minute pause on rate limits
+  - Consecutive error tracking
+- **Error Handling**:
+  - Automatic retries
+  - Graceful error recovery
+  - Clear error messages
+  - Progress preservation
+
+## 🔧 Troubleshooting
+- **Progress Not Updating**: Close and reopen the extension popup
+- **Rate Limited**: Extension will pause automatically for 5 minutes
+- **Stops Early**: Check for Twitter UI changes or try refreshing
+- **Not Starting**: Ensure you're on a Twitter/X profile or following page
+
+## 🤝 Contributing
+Contributions welcome! Feel free to:
+- Submit issues
+- Create pull requests
+- Suggest improvements
+- Report bugs
+
+## 📜 License
+MIT License - see [LICENSE](LICENSE)
+
+## ⚠️ Disclaimer
+- Use responsibly and at your own risk
+- Respects Twitter's rate limits
+- Not affiliated with Twitter/X
+- May need updates if Twitter's UI changes
