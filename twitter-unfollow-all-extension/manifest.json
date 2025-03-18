@@ -5,7 +5,13 @@
   "description": "Unfollow all accounts on Twitter/X with one click.",
   "permissions": [
     "activeTab",
-    "scripting"
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "*://*.twitter.com/*",
+    "*://*.x.com/*"
   ],
   "action": {
     "default_popup": "popup.html",
@@ -22,7 +28,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://*.x.com/*"],
+      "matches": ["*://*.x.com/*", "*://*.twitter.com/*"],
       "js": ["unfollow.js"]
     }
   ]
